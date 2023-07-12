@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+html,
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    background: linear-gradient(black, rgb(45, 45, 45));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+nav {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div.hamburger {
+    display: none;
+}
+
+nav ul {
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    text-align: center;
+    width: calc(100%/5);
+    height: 100px;
+    line-height: 100px;
+    color: white;
+    font-size: 1.4rem;
+    transition: .7s all;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    background-color: rgb(58, 58, 58);
+    padding: 10px 20px;
+    border-radius: .25em;
+    transition: .7s all;
+}
+
+nav ul li:hover {
+    width: calc(100%/4.5);
+}
+
+nav ul li a:hover {
+    cursor: pointer;
+    color: black;
+    background: white;
+}
+
+header.light li{
+    background-color: aliceblue;
+}
+
+@media screen and (max-width:850px) {
+    nav {
+        background: linear-gradient(black, rgb(45, 45, 45));
+        width: 100vw;
+        padding-top: 60px;
+        max-height: 100vh;
+        transition: 1s transform;
+        transform: translateX(100%);
+    }
+
+    .slided {
+        transform: translateX(0);
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    nav ul li {
+        min-height: calc(100%/4);
+        width: 100%;
+    }
+
+    nav ul li a {
+        background-color: transparent;
+    }
+
+    div.hamburger {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+    div.hamburger > div {
+        width: 50px;
+        right:10px;
+        position: relative;
+        height:10%;
+        margin:20%;
+        background-color: white;
+        transition: 1s transform;
+    }
+
+    div.opened .bar-1 {
+        transform-origin: center;
+        transform: rotate(45deg) translate(10px,10px);
+    }
+    div.opened .bar-3 {
+        transform-origin: center;
+        transform: rotate(-45deg) translate(10px,-10px);
+    }
+    div.opened .bar-2 {
+        opacity: 0;
+    }
+}
