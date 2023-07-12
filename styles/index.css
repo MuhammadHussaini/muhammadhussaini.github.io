@@ -1,4 +1,7 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 
 html,
 body {
@@ -16,6 +19,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -59,15 +63,65 @@ nav ul li:hover {
     width: calc(100%/4.5);
 }
 
+nav ul li a.active-tab {
+    background-color: rgb(46, 45, 85);
+}
+
 nav ul li a:hover {
     cursor: pointer;
     color: black;
     background: white;
 }
 
-header.light li{
+header.light li {
     background-color: aliceblue;
 }
+
+div.container-main {
+    margin: 120px 1% auto 1%;
+    background: linear-gradient(black, rgb(45, 45, 45));
+    color: aliceblue;
+    padding: 20px;
+    border-radius: .2em;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* transition: 1s all; */
+}
+
+div.container-main.light {
+    background: aliceblue;
+    color: black;
+}
+
+div.big-text {
+    font-size: 5rem;
+    color: rgb(226, 255, 197);
+    /* text-shadow: 0px 0px 5px rgb(251, 255, 246); */
+    padding: 50px;
+    font-family: 'Belanosima';
+    font-weight: bold;
+    animation: text-shadow 3s infinite 0s ease-in-out forwards
+}
+
+div.big-text.light {
+    color: rgb(0, 152, 194);
+    text-shadow: 0px 0px 5px rgb(0, 152, 194);
+    animation: text-shadow2 3s infinite 0s ease-in-out forwards;
+}
+
+div.my-image {
+    text-align: center;
+}
+
+div.my-image img {
+    padding: 50px;
+    border-radius: 50%;
+    width: 30%;
+    height: auto;
+    animation: image-anim 6s infinite 0s ease-in-out forwards;
+}
+
 
 @media screen and (max-width:850px) {
     nav {
@@ -75,12 +129,15 @@ header.light li{
         width: 100vw;
         padding-top: 60px;
         max-height: 100vh;
+        opacity: 0;
         transition: 1s transform;
         transform: translateX(100%);
     }
 
     .slided {
         transform: translateX(0);
+        opacity: 1;
+        transition: 0.5s opacity;
     }
 
     nav ul {
@@ -109,25 +166,92 @@ header.light li{
         padding: 0;
         text-align: center;
     }
-    div.hamburger > div {
+
+    div.hamburger>div {
         width: 50px;
-        right:10px;
+        right: 10px;
         position: relative;
-        height:10%;
-        margin:20%;
+        height: 10%;
+        margin: 20%;
         background-color: white;
         transition: 1s transform;
     }
 
     div.opened .bar-1 {
         transform-origin: center;
-        transform: rotate(45deg) translate(10px,10px);
+        transform: rotate(45deg) translate(10px, 10px);
     }
+
     div.opened .bar-3 {
         transform-origin: center;
-        transform: rotate(-45deg) translate(10px,-10px);
+        transform: rotate(-45deg) translate(10px, -10px);
     }
+
     div.opened .bar-2 {
         opacity: 0;
+    }
+
+    div.container-main {
+        grid-template-columns: 100%;
+        justify-content: center;
+    }
+
+}
+
+@keyframes image-anim {
+    0% {
+        transform: translateY(5px);
+    }
+
+    20% {
+        filter: blur(0px)
+    }
+
+    40% {
+        filter: grayscale(1)
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    60% {
+        filter: sepia(1);
+    }
+
+    80% {
+        filter: brightness(1);
+    }
+
+    100% {
+        transform: translateY(5px)
+    }
+}
+
+@keyframes text-shadow {
+    0% {
+        text-shadow: 0px 0px 5px rgb(251, 255, 246);
+    }
+
+    50% {
+        text-shadow: 0px 0px 10px rgb(251, 255, 246);
+    }
+
+    100% {
+        text-shadow: 0px 0px 5px rgb(251, 255, 246);
+    }
+}
+
+@keyframes text-shadow2 {
+    0% {
+        text-shadow: 0px 0px 5px rgb(0, 152, 194);
+    }
+
+    50% {
+        text-shadow: 0px 0px 10px rgb(0, 152, 194);
+    }
+
+    100% {
+        text-shadow: 0px 0px 5px rgb(0, 152, 194);
     }
 }
