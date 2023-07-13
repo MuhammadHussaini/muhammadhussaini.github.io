@@ -298,15 +298,15 @@ footer.light .socials a:hover {
         width: 100vw;
         padding-top: 60px;
         max-height: 100vh;
-        opacity: 0;
-        transition: 1s transform;
-        transform: translateX(100%);
+        opacity: 0 !important;
+        transition: 1s transform !important;
+        transform: translateX(100%) !important;
     }
 
     .slided {
-        transform: translateX(0);
-        opacity: 1;
-        transition: 0.5s opacity;
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        transition: 0.5s opacity !important;
     }
 
     nav ul {
