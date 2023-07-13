@@ -27,7 +27,7 @@ body.light {
     align-items: center;
 }
 
-#preloader img {
+#preloader div {
     width: 10vh;
     height: 10vh;
     border-radius: 100%;
