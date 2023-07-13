@@ -22,7 +22,9 @@ function toggleMenu() {
 function toggleMode() {
     document.querySelector('body').classList.toggle("light")
     document.querySelector('header').classList.toggle("light");
-    document.querySelector('.main').classList.toggle("light");
+    for (let i = 0; i < document.getElementsByClassName('main').length; i++) {
+        document.getElementsByClassName('main')[i].classList.toggle("light")
+    }
     for (let i = 0; i < document.getElementsByClassName('panel').length; i++) {
         document.getElementsByClassName('panel')[i].classList.toggle("light")
     }
