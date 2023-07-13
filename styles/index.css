@@ -29,7 +29,7 @@ body.light {
 
 #preloader img {
     width: 10vh;
-    height: auto;
+    height: 10vh;
     border-radius: 100%;
     animation: preloader 0.75s infinite 0s ease-out forwards;
 }
