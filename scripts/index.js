@@ -2,7 +2,7 @@ window.onload = function () {
     document.getElementById("preloader").style.display = "none";
 }
 
-ScrollReveal().reveal('header', {delay: 200})
+ScrollReveal().reveal('header', {mobile: false, delay: 200})
 ScrollReveal().reveal('nav', { mobile: false, scale: .85, delay: 250 })
 ScrollReveal().reveal('.container-main', { delay: 300 })
 ScrollReveal().reveal('.big-text', { distance: '100%', origin: "left", opacity: null, delay: 400 })
@@ -15,7 +15,7 @@ ScrollReveal().reveal('.card-desc', { distance: '200%', origin: "bottom", delay:
 ScrollReveal().reveal('.card a', { distance: '200%', origin: "bottom", delay: 600 })
 ScrollReveal().reveal('footer', { origin: "bottom"})
 ScrollReveal().reveal('footer .text', { origin: "left", delay: 100, distance: '100%'})
-ScrollReveal().reveal('footer .socials', { origin: "right", delay: 100, distance: '100%'})
+ScrollReveal().reveal('footer .socials', { mobile: false, origin: "right", delay: 100, distance: '100%'})
 
 
 

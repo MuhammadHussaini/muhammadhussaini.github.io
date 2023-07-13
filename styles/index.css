@@ -312,12 +312,16 @@ footer.light .socials a:hover {
     nav ul {
         display: flex;
         flex-direction: column;
-        align-items: center
+        align-items: center;
     }
 
     nav ul li {
         min-height: calc(100%/4);
         width: 100%;
+    }
+    
+    nav ul li:nth-child(5) {
+        height: calc(25vh - 25%);
     }
 
     nav ul li a {
