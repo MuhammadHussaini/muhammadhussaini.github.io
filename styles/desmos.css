@@ -27,6 +27,7 @@ div.main.light {
     padding: 10px;
     border-radius: .2em;
     max-width: 100%;
+    margin-top: 1%;
 }
 
 .creation-card img {
@@ -106,7 +107,4 @@ div.main.light {
         justify-content: center;
     }
 
-    div.creations .creation-card {
-        margin-top: 1%
-    }
 }
