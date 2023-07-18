@@ -1,34 +1,51 @@
-window.onload = function () {
-    document.getElementById("preloader").style.display = "none";
+window.onload = () => {
+    document.querySelector("#preloader").style.display = 'none';
 }
 
-ScrollReveal().reveal('header', {mobile: false, delay: 200})
-ScrollReveal().reveal('nav', { mobile: false, scale: .85, delay: 250 })
-ScrollReveal().reveal('.container-main', { delay: 300 })
-ScrollReveal().reveal('.big-text', { distance: '100%', origin: "left", opacity: null, delay: 400 })
-ScrollReveal().reveal('.my-image', { distance: '100%', origin: "right", delay: 500 })
-ScrollReveal().reveal('.cards', { distance: '50%', origin: "bottom", delay: 500 })
-ScrollReveal().reveal('.card', { distance: '200%', origin: "bottom", delay: 500 })
-ScrollReveal().reveal('.card .bi', { distance: '200%', origin: "bottom", delay: 550 })
-ScrollReveal().reveal('.card-title', { distance: '200%', origin: "bottom", delay: 550 })
-ScrollReveal().reveal('.card-desc', { distance: '200%', origin: "bottom", delay: 600 })
-ScrollReveal().reveal('.card a', { distance: '200%', origin: "bottom", delay: 600 })
-ScrollReveal().reveal('footer', { origin: "bottom"})
-ScrollReveal().reveal('footer .text', { origin: "left", delay: 100, distance: '100%'})
-ScrollReveal().reveal('footer .socials', { mobile: false, origin: "right", delay: 100, distance: '100%'})
+const parallaxElements = document.querySelectorAll(".parallax");
+let xValue = 0, yValue = 0;
 
+window.addEventListener("mousemove", (e) => {
+    if (timeline.isActive()) return;
 
+    xValue = e.clientX - (window.innerWidth / 2)
+    yValue = e.clientY - (window.innerHeight / 2)
 
-function toggleMenu() {
-    document.querySelector(".hamburger").classList.toggle("opened");
-    document.querySelector("nav").classList.toggle("slided");
+    update(e)
+});
+
+function update(e) {
+    parallaxElements.forEach(el => {
+        let speedx = el.dataset.speedx
+        let speedy = el.dataset.speedy
+        let zValue = (e.clientX - parseFloat(getComputedStyle(el).right)) / 50;
+        el.style.transition = `0.45s cubic-bezier(.2, .49, .32, .99)`
+        el.style.transform = `translateX(${-xValue * speedx}px) translateY(${-yValue * speedy}px) perspective(1000px) translateZ(${(-zValue)}px)`
+    });
+    document.querySelector(".name").style.transform = `skewY(${xValue / 270}deg) skewX(${-yValue / 270}deg)`
 }
 
-function toggleMode() {
-    document.querySelector('body').classList.toggle("light")
-    document.querySelector('header').classList.toggle("light");
-    document.querySelector('.container-main').classList.toggle("light");
-    document.querySelector('.big-text').classList.toggle("light");
-    document.querySelector('.cards').classList.toggle("light");
-    document.querySelector('footer').classList.toggle("light");
-}
+let timeline = gsap.timeline()
+
+timeline.from(".starbg", {
+    top: "-10px",
+    duration: 1.5
+}, "0").from(".mountains", {
+    y: 1000,
+    duration: 1.5
+}, "0.8").from("header", {
+    y: "-60px",
+    duration: 1,
+    opacity: 0,
+    ease: "power1.out"
+}, "2").from(".name", {
+    opacity: 0,
+    y: 200,
+    duration: 1.1,
+    ease: "power1.out"
+}, "2.2").from(".iam", {
+    opacity: 0,
+    y: -100,
+    duration: 1,
+    ease: "power1.out"
+}, "2")
