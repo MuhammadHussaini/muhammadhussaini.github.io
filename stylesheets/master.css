@@ -58,6 +58,7 @@ header *::selection {
 header .name {
     padding: 0 2rem;
     color: #fff;
+    text-shadow: 0 2px 5px #000;
 }
 
 nav ul {
@@ -75,6 +76,7 @@ nav ul li {
 nav ul a {
     text-decoration: none;
     color: #fff;
+    text-shadow: 0 0 5px #000;
 }
 
 section {
