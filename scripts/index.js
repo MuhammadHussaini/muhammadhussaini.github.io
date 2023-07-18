@@ -1,20 +1,29 @@
+// Preloader
 window.onload = () => {
     document.querySelector("#preloader").style.display = 'none';
 }
 
+
+// ScrollReveal() reveal
+let revealOngoing = true;
+
+function revealComplete() {
+    revealOngoing = false
+}
+
 const parallaxElements = document.querySelectorAll(".parallax");
-let xValue = 0, yValue = 0;
+let xValue = 0,
+    yValue = 0;
 
+// Parallax Effect
 window.addEventListener("mousemove", (e) => {
-    if (timeline.isActive()) return;
-
-    xValue = e.clientX - (window.innerWidth / 2)
-    yValue = e.clientY - (window.innerHeight / 2)
-
-    update(e)
+    xValue = e.clientX - (window.innerWidth / 2);
+    yValue = e.clientY - (window.innerHeight / 2);
+    update(e);
 });
 
 function update(e) {
+    if (revealOngoing) return;
     parallaxElements.forEach(el => {
         let speedx = el.dataset.speedx
         let speedy = el.dataset.speedy
@@ -25,27 +34,5 @@ function update(e) {
     document.querySelector(".name").style.transform = `skewY(${xValue / 270}deg) skewX(${-yValue / 270}deg)`
 }
 
-let timeline = gsap.timeline()
 
-timeline.from(".starbg", {
-    top: "-10px",
-    duration: 1.5
-}, "0").from(".mountains", {
-    y: 1000,
-    duration: 1.5
-}, "0.8").from("header", {
-    y: "-60px",
-    duration: 1,
-    opacity: 0,
-    ease: "power1.out"
-}, "2").from(".name", {
-    opacity: 0,
-    y: 200,
-    duration: 1.1,
-    ease: "power1.out"
-}, "2.2").from(".iam", {
-    opacity: 0,
-    y: -100,
-    duration: 1,
-    ease: "power1.out"
-}, "2")
+// ScrollReveal
