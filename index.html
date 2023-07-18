@@ -4,10 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Muhammad Hussaini</title>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles/index.css">
+    <title>Home | Muhammad Hussaini</title>
     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="stylesheets/master.css">
+    <link rel="stylesheet" href="stylesheets/index.css">
 </head>
 
 <body>
@@ -15,35 +19,39 @@
         <div class="circle"></div>
     </div>
     <header>
-        <h2>Me</h2>
+        <h2 class="name">Muhammad</h2>
         <nav>
             <ul>
                 <li><a href="">Home</a></li>
-                <li><a href="">Me</a></li>
                 <li><a href="">Desmos</a></li>
+                <li><a href="">About</a></li>
                 <li><a href="">Socials</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div id="page1">
-            <img src="img/starbg.png" alt="Star Background" data-speedx="0.03" data-speedy="0.03"
-                class="parallax starbg">
-            <h2 class="iam">I am</h2>
-            <h1 class="name">Muhammad</h1>
-            <img src="img/mountains.png" alt="mountains" data-speedx="0.12" data-speedy="0.1"
-                class="parallax mountains">
-        </div>
-        <div id="page2">
-            <div class="left1">
-                <img src="img/desmos.png" alt="">
+        <section class="p-section">
+            <div class="wrapper">
+                <img src="images/starbg.png" alt="" class="parallax starbg">
+                <h2>I am</h2>
+                <h1>Muhammad</h1>
+                <img src="images/mountains.png" alt="" class="parallax mountains">
             </div>
-            <div class="right1">
-                <h1>Desmos Graphing</h1>
-                <a href="" class="a">Check it out</a>
+        </section>
+        <section class="cards">
+            <div class="full">
+                <div class="left-1"></div>
+                <div class="right-1"></div>
             </div>
-        </div>
+        </section>
     </main>
+    <footer>
+        <span>
+            <i class="bi bi-c-circle"></i> Muhammad Hussaini @ 2023
+        </span>
+    </footer>
+
+    <!--Custom JavaScript-->
     <script src="scripts/index.js"></script>
 </body>
 
