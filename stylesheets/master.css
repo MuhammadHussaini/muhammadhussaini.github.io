@@ -51,6 +51,10 @@ header {
     align-items: center;
 }
 
+header *::selection {
+    background-color: rgb(30, 57, 62);
+}
+
 header .name {
     padding: 0 2rem;
     color: #fff;
@@ -97,6 +101,7 @@ section {
     header .name {
         display: none;
     }
+
     header {
         justify-content: space-around;
     }
