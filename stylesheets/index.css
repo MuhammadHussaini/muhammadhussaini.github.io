@@ -1,0 +1,59 @@
+.p-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    position: relative;
+}
+
+.p-wrapper img {
+    position: absolute;
+    width: 110vw;
+    top: 0;
+}
+
+.p-wrapper .starbg {
+    height: 100%;
+}
+
+.p-wrapper .mountains {
+    transition: 0.5s all;
+    transform-origin: bottom;
+    transform: scale(1.5);
+}
+
+.p-wrapper h1,
+.p-wrapper h2 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.p-wrapper .h2 {
+    position: absolute;
+    bottom: 70%;
+    font-size: 4rem;
+    font-weight: 200;
+}
+
+.p-wrapper .h1 {
+    position: absolute;
+    bottom: 55%;
+    font-size: 5rem;
+}
+
+
+/* Media Queries for Parallax Section */
+@media screen and (max-width: 1100px){.p-wrapper .mountains{transform:scale(1.7);top:15%}}
+@media screen and (max-width: 1000px){.p-wrapper .mountains{transform:scale(1.9);top:25%}}
+@media screen and (max-width: 850px){.p-wrapper .mountains{transform:scale(2.1);top:35%}}
+@media screen and (max-width: 730px){.p-wrapper .mountains{transform:scale(2.3);top:45%}}
+@media screen and (max-width: 610px){.p-wrapper .mountains{transform:scale(2.7);top:55%}}
+@media screen and (max-width: 530px){.p-wrapper .mountains{transform:scale(2.7);top:60%} .p-wrapper {height: 70vh;} .p-wrapper .h1 {font-size: 3.5rem;} .p-wrapper .h2 {font-size: 2rem;}}
+@media screen and (max-width: 470px){.p-wrapper .mountains{transform:scale(2.9);top:65%}}
+@media screen and (max-width: 415px){.p-wrapper .mountains{transform:scale(3.3);top:70%}}
+@media screen and (max-width: 350px){.p-wrapper .mountains{transform:scale(3.8);top:80%} .p-wrapper .h1 {font-size: 3rem;} .p-wrapper .h2 {font-size: 1.65rem;}}
+@media screen and (max-width: 335px){.p-wrapper .mountains{transform:scale(4.5);top:90%}}
