@@ -142,7 +142,7 @@ main {
     height: 100vh;
     background-color: blue;
     position: relative;
-    background: url('./img/starbg.png');
+    background: url('../img/starbg.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
