@@ -1,0 +1,10 @@
+header {
+    height: 45.2px;
+    background-color: #000;
+}
+
+#calculator {
+    height: 100vh;
+    padding-top: 45.2px;
+    width: 100%;
+}
