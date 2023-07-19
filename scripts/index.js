@@ -16,4 +16,4 @@ function scrollReveal() {
     s.reveal(".left-1", { origin: 'left', distance: '50%', duration: 1000, delay: 500 })
     s.reveal(".right-1 h2", { origin: 'top', distance: '50px', duration: 1000, delay: 800 })
     s.reveal(".right-1 a", { origin: 'bottom', distance: '50px', duration: 1000, delay: 800 })
-} s
+}
