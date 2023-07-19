@@ -10,7 +10,7 @@ function scrollReveal() {
     s.reveal(".p-wrapper .mountains", { distance: '100%', origin: 'bottom', duration: 1500, delay: 700 })
     s.reveal(".p-wrapper .h2", { distance: '200px', origin: 'top', duration: 1000, delay: 1700 })
     s.reveal(".p-wrapper .h1", { distance: '200px', origin: 'bottom', duration: 1000, delay: 2100 })
-    s.reveal("header", { delay: 2500 })
+    s.reveal("header", { delay: 2500, afterReveal: () => { document.querySelector('header').style.transition = '0.7s' } })
     s.reveal(".name", { origin: 'left', distance: '100px', duration: 1000, delay: 2500 })
     s.reveal("nav", { origin: 'top', distance: '100px', duration: 1000, delay: 2500 })
     s.reveal(".left-1", { origin: 'left', distance: '50%', duration: 1000, delay: 500 })

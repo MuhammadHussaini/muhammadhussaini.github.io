@@ -51,6 +51,10 @@ header {
     align-items: center;
 }
 
+header:hover {
+    background-color: rgb(30, 57, 62);
+}
+
 header *::selection {
     background-color: rgb(30, 57, 62);
 }
@@ -73,10 +77,18 @@ nav ul li {
     padding: 0 2rem;
 }
 
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
 nav ul a {
     text-decoration: none;
     color: #fff;
     text-shadow: 0 0 5px #000;
+}
+
+footer {
+    display: none;
 }
 
 section {
