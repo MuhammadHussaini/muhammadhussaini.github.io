@@ -85,11 +85,11 @@ section {
 
 @keyframes preloader {
     from {
-        border: 0px solid blue;
+        border: 0px solid rgb(30, 57, 62);
     }
 
     to {
-        border: 10px solid blue;
+        border: 10px solid rgb(30, 57, 62);
     }
 }
 
